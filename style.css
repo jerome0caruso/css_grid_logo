@@ -1,11 +1,11 @@
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: auto auto;
+    grid-template-rows: 100px auto auto;
     grid-template-areas:
+    "nav nav nav nav"
     "adidas apple amazon beats"
     "headphones shop music shoes";
-    justify-items: flex-end;
 }
 .adidas {
     grid-area: adidas;
@@ -39,8 +39,41 @@ img {
 }
 
 .grid-container > div {
-    max-height: 50vh;
+
     place-self: center;
     border: 1px solid #eee;
     padding: 3em;
+}
+
+.nav {
+    grid-area: nav;
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "logo  links search";
+}
+.logo {
+    grid-area: logo;
+}
+.links {
+    grid-area: links;
+}
+.links ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    justify-content: space-around;
+}
+.search {
+    grid-area: search;
+}
+.nav {
+    background-color: black;
+    color: #fff;
+}
+
+.nav img {
+    height: 100%;
+    width: auto;
 }
